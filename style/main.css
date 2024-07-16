@@ -272,7 +272,7 @@ ul {
 
 
 .landing {
-    background-image: url(/images/home.jpg);
+    background-image: url(../images/home.jpg);
     background-size: cover;
     background-position: 70% 30%;
     position: relative;
