@@ -400,11 +400,17 @@ ul {
         font-size: 22px;
     }
 
+    ul {
+        margin-top: 10px;
+    }
+
     ul li {
         position: relative;
         padding-right: 15px;
         color: var(--b-color);
         font-size: 18px;
+        line-height: 1.2;
+        margin-bottom: 10px;
 
         &::after {
             content: "";
