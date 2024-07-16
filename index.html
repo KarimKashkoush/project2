@@ -83,22 +83,22 @@
             <h2>معلومات عن البطاقة الصحية</h2>
         </section>
         <section class="container">
-                <section class="image">
-                    <img src="images/about.jpg" alt="img">
-                </section>
+            <section class="image">
+                <img src="images/about.jpg" alt="img">
+            </section>
 
-                <section class="content">
-                    <h2>ماهي خدمة البطاقة الصحية ؟</h2>
-                    <p>هي خدمة تم تنفيذها لعمل سجل طبي للمرضي</p>
-                    <p>خدمات أخري:</p>
-                    <ul>
-                        <li>تسجيل البينات الطبية لزوار المستشفي</li>
-                        <li>تسهيل زيارة كبار السن والحالات الطارئة</li>
-                        <li>حفظ السجل المرضي عن طريق تسجيل التحاليل، واللآشعات المختلفة والأدوية</li>
-                        <li>صرف الأدوية بسهولة من صيدلية المستشفي ان وجدت</li>
-                        <li>وجود تقرير مفصل لكل مريض في حسابه عن حالته الصحية</li>
-                    </ul>
-                </section>
+            <section class="content">
+                <h2>ماهي خدمة البطاقة الصحية ؟</h2>
+                <p>هي خدمة تم تنفيذها لعمل سجل طبي للمرضي</p>
+                <p>خدمات أخري:</p>
+                <ul>
+                    <li>تسجيل البينات الطبية لزوار المستشفي</li>
+                    <li>تسهيل زيارة كبار السن والحالات الطارئة</li>
+                    <li>حفظ السجل المرضي عن طريق تسجيل التحاليل، واللآشعات المختلفة والأدوية</li>
+                    <li>صرف الأدوية بسهولة من صيدلية المستشفي ان وجدت</li>
+                    <li>وجود تقرير مفصل لكل مريض في حسابه عن حالته الصحية</li>
+                </ul>
+            </section>
         </section>
     </section>
     <!-- Start about -->
@@ -137,13 +137,82 @@
     <footer class="footer">
         <section class="container">
             <section class="boxs">
+                <section class="box">
+                    <h2>
+                        <a href="index.html">البطاقة الصحية</a>
+                    </h2>
+                </section>
 
+                <section class="box">
+                    <h2>
+                        روابط تهمك
+                    </h2>
+                    <ul>
+                        <li><a href="#">رابط</a></li>
+                        <li><a href="#">رابط</a></li>
+                    </ul>
+                </section>
+
+                <section class="box">
+                    <h2>
+                        تسجيل دخول
+                    </h2>
+                    <ul>
+                        <li><a href="#">تسجيل دخول أطباء</a></li>
+                        <li><a href="#">تسجيل دخول مستخدمين</a></li>
+                    </ul>
+                </section>
+
+                <section class="box">
+                    <h2>
+                        انضم الأن
+                    </h2>
+                    <ul>
+                        <li><a href="#">انضم الي عائلة البطاقة الصحية</a></li>
+                    </ul>
+                </section>
+
+                <section class="box">
+                    <h2>معلومات تهمك</h2>
+                    <ul>
+                        <li>
+                            <a href="#">من نحن</a>
+                        </li>
+                    </ul>
+                </section>
+            </section>
+            <section class="social">
+                <section class="section-header-b">
+                    <h2>تواصل معنا</h2>
+                </section>
+                <section class="boxs">
+                    <section class="facebook">
+                        <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
+                    </section>
+                    <section class="instagram">
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    </section>
+                    <section class="twitter">
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                    </section>
+                </section>
             </section>
         </section>
     </footer>
     <!-- End Footer -->
 
+    <section class="copy-right">
+        <section class="conatainer">
+            <p>صمم بواسطة تيم, <span id="copyRightDate"></span></p>
+        </section>
+    </section>
 
+    <!-- CopyRight -->
+    <script>
+        const year = new Date().getFullYear();
+        document.getElementById("copyRightDate").innerHTML = year;
+    </script>
+    <!-- CopyRight -->
     <!-- Font Awesome Script -->
     <script src="js/all.js"></script>
     <!-- Js -->

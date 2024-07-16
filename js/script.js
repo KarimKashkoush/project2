@@ -50,4 +50,4 @@ let letter = '';
     }
     setTimeout(text, 200);
 }());
-// End Landing
+// End Landing  
