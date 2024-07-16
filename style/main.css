@@ -265,7 +265,7 @@ ul {
 }
 
 /* Start media query for header */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 786px) {
     .btn-header {
         display: block;
         position: absolute;
@@ -699,6 +699,13 @@ ul {
     color: var(--w-color);
     font-size: 16px;
     text-align: center;
-    margin-bottom: 70px;
+}
+
+@media (max-width: 786px) {
+    .copy-right {
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        margin-bottom: 70px;
+    }
 }
 /* Start Footer */
