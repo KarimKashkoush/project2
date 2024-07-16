@@ -349,7 +349,7 @@ ul {
     }
 }
 
-@media (max-width: 786px) {
+@media (max-width: 486px) {
 
     .landing .container .content {
         h2 {
