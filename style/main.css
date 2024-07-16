@@ -3,7 +3,7 @@
 :root {
     --transition-3: 0.3s;
     --transition-5: 0.5s;
-    --main-color: #538392;
+    --main-color: #478CCF;
     --sub-color: #6295A2;
 
     --w-color: #fff;
@@ -17,10 +17,14 @@
 }
 
 body {
-    font-family: "Cairo", sans-serif;
     scroll-behavior: smooth;
     direction: rtl;
     height: 10000px;
+}
+
+body,
+button {
+    font-family: "Cairo", sans-serif;
 }
 
 /* Start Container Setting */
@@ -62,9 +66,16 @@ ul {
     list-style: none;
 }
 
+.btn {
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
 /* Start Header */
 .header {
     position: fixed;
+    z-index: 100;
     width: 100%;
     top: 0;
     left: 0;
@@ -147,7 +158,7 @@ ul {
         color: var(--w-color);
         cursor: pointer;
         border: 3px solid var(--w-color);
-        
+
         svg {
             font-size: 20px;
         }
@@ -175,6 +186,7 @@ ul {
         gap: 10px;
         flex-direction: column-reverse;
         height: 60px;
+        overflow: hidden;
     }
 
     .header .open-nav {
@@ -255,3 +267,86 @@ ul {
 
 /* End media query for header */
 /* End Header */
+
+/* Start Landing */
+
+
+.landing {
+    background-image: url(/images/home.jpg);
+    background-size: cover;
+    background-position: 70% 30%;
+    position: relative;
+    height: 100vh;
+}
+
+.landing::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);   
+}
+
+.landing .container {
+    position: relative;
+    width: 100%;
+    padding-inline: 15px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.landing .container .content {
+    h2 {
+        color: var(--main-color);
+        font-size: 48px;
+        line-height: 1.6;
+    }
+
+    p {
+        color: var(--main-color);
+        font-size: 22px;
+        line-height: 1.6;
+    }
+
+    margin-bottom: 25px;
+}
+
+.landing .container .landing-login {
+    .btn a {
+        padding: 5px 20px;
+        font-size: 18px;
+        border: 1px solid var(--main-color);
+        border-radius: 7px;
+        font-weight: 600;
+        color: var(--main-color);
+        position: relative;
+        overflow: hidden;
+        transition: var(--transition-3);
+    }
+
+    .btn a::before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100%;
+        background-color: var(--main-color);
+        transition: var(--transition-3);
+    }
+
+    .btn a:hover {
+        color: var(--w-color);
+    }
+
+    .btn a:hover::before {
+        right: 0;
+    }
+}
+
+/* End Landing */
