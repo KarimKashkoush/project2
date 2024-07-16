@@ -11,7 +11,7 @@ body.onscroll = () => {
     }
 }
 
-function cliccc() {
+function openNav() {
     let headerContainer = document.getElementById("headerContainer");
     let icon = document.getElementById("btnHeader")
     if (headerContainer.classList.contains("open-nav")) {
