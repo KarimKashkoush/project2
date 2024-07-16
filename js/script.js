@@ -27,5 +27,27 @@ function cliccc() {
 // End Header
 
 // Start Landing
+const texts = ["هويتك المرضية ديما معاك", "خليك مكانك واحجز ميعاد كشفك"];
+let count = 0;
+let index = 0;
+let currentText = '';
+let letter = '';
 
+(function text() {
+    if (count === texts.length) {
+        count = 0;
+    }
+    currentText = texts[count];
+    letter = currentText.slice(0, ++index);
+
+    document.getElementById('typing-text').textContent = letter;
+    if (letter.length === currentText.length) {
+        count++;
+        index = 0;
+        setTimeout(() => {
+            document.getElementById('typing-text').textContent = '';
+        }, 2000);
+    }
+    setTimeout(text, 200);
+}());
 // End Landing
