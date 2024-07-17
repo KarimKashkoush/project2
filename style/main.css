@@ -666,8 +666,19 @@ ul {
     padding-top: var(--p-50);
     background-color: var(--main-color);
     border-bottom: 2px solid var(--w-color);
+    position: relative;
+    z-index: 1;
 }
 
+.footer .footer-background {
+    position: absolute;
+    width: 120px;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    filter: blur(2px);
+    z-index: -1;
+}
 .footer .container .boxs {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
