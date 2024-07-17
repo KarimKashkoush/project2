@@ -205,6 +205,7 @@ ul {
     top: 0;
     left: 0;
     transition: var(--transition-5);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .btn-header {
@@ -666,7 +667,9 @@ ul {
 
 /* Start Footer */
 .footer {
-    padding-block: var(--p-50);
+    padding-top: var(--p-50);
+    background-color: var(--main-color);
+    border-bottom: 2px solid var(--w-color);
 }
 
 .footer .container .boxs {
@@ -676,15 +679,19 @@ ul {
     margin-bottom: 25px;
 }
 
+.footer .container .boxs h2 {
+    border-bottom: 1px solid var(--w-color);
+    width: fit-content;
+}
+
 .footer .container .boxs h2,
 .footer .container .boxs h2 a {
-    color: var(--main-color);
+    color: var(--w-color);
 }
 
 .footer .container .boxs a {
-    color: var(--b-color);
+    color: var(--w-color);
 }
-
 
 .footer .social .boxs {
     display: flex;
@@ -706,7 +713,6 @@ ul {
 }
 
 @media (max-width: 786px) {
-
     .footer .container .boxs h2,
     .footer .container .boxs h2 a {
         font-size: 18px;
@@ -717,12 +723,53 @@ ul {
     }
 
     .copy-right {
-
-
         border-bottom-left-radius: 20px;
         border-bottom-right-radius: 20px;
         margin-bottom: 70px;
     }
 }
-
 /* Start Footer */
+
+/* Start Medical departments */
+.medical-departments {
+    padding-block: var(--p-100);
+}
+
+.medical-departments .boxs {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 25px;
+}
+
+.medical-departments .boxs .box {
+    border: 1px solid var(--main-color);
+    padding-top: 10px;
+    border-radius: 10px;
+    text-align: center;
+    overflow: hidden;
+    transition: var(--transition-3);
+}
+
+.medical-departments .boxs .box p {
+    color: var(--main-color);
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.medical-departments .boxs .box a {
+    background-color: var(--main-color);
+    display: block;
+    color: var(--w-color);
+    font-size: 16px;
+    padding-block: 5px;
+}
+
+.medical-departments .boxs .box img {
+    max-width: 100%;
+}
+
+.medical-departments .boxs .box:hover {
+    transform: translateY(-10px);
+}
+/* End Medical departments */
