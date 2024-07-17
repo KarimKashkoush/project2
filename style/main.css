@@ -493,6 +493,7 @@ ul {
         font-size: 14px;
     }
 }
+
 /* End Landing */
 
 /* Start About */
@@ -661,6 +662,52 @@ ul {
 
 /* Start info */
 
+/* Start Medical departments */
+.medical-departments {
+    padding-block: var(--p-100);
+}
+
+.medical-departments .boxs {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 25px;
+}
+
+.medical-departments .boxs .box {
+    border: 1px solid var(--main-color);
+    padding-top: 10px;
+    border-radius: 10px;
+    text-align: center;
+    overflow: hidden;
+    transition: var(--transition-3);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.medical-departments .boxs .box p {
+    color: var(--main-color);
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.medical-departments .boxs .box a {
+    background-color: var(--main-color);
+    display: block;
+    color: var(--w-color);
+    font-size: 16px;
+    padding-block: 5px;
+}
+
+.medical-departments .boxs .box img {
+    max-width: 100%;
+}
+
+.medical-departments .boxs .box:hover {
+    transform: translateY(-10px);
+}
+
+/* End Medical departments */
+
 /* Start Footer */
 .footer {
     padding-top: var(--p-50);
@@ -673,12 +720,13 @@ ul {
 .footer .footer-background {
     position: absolute;
     width: 120px;
-    left: 0;
+    left: 50%;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translate(-50%, -50%);
     filter: blur(2px);
     z-index: -1;
 }
+
 .footer .container .boxs {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -724,6 +772,7 @@ ul {
 }
 
 @media (max-width: 786px) {
+
     .footer .container .boxs h2,
     .footer .container .boxs h2 a {
         font-size: 18px;
@@ -739,49 +788,5 @@ ul {
         margin-bottom: 70px;
     }
 }
+
 /* Start Footer */
-
-/* Start Medical departments */
-.medical-departments {
-    padding-block: var(--p-100);
-}
-
-.medical-departments .boxs {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 25px;
-}
-
-.medical-departments .boxs .box {
-    border: 1px solid var(--main-color);
-    padding-top: 10px;
-    border-radius: 10px;
-    text-align: center;
-    overflow: hidden;
-    transition: var(--transition-3);
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-
-.medical-departments .boxs .box p {
-    color: var(--main-color);
-    font-weight: 700;
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
-.medical-departments .boxs .box a {
-    background-color: var(--main-color);
-    display: block;
-    color: var(--w-color);
-    font-size: 16px;
-    padding-block: 5px;
-}
-
-.medical-departments .boxs .box img {
-    max-width: 100%;
-}
-
-.medical-departments .boxs .box:hover {
-    transform: translateY(-10px);
-}
-/* End Medical departments */
