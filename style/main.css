@@ -493,11 +493,9 @@ ul {
         font-size: 14px;
     }
 }
-
 /* End Landing */
 
 /* Start About */
-
 .about {
     padding-block: var(--p-100);
 }
@@ -597,7 +595,6 @@ ul {
 /* End About */
 
 /* Start info */
-
 .info {
     padding-block: var(--p-100);
     background-color: var(--main-color);
@@ -626,7 +623,6 @@ ul {
         color: var(--w-color);
     }
 }
-
 
 .info .container .boxs .box span {
     position: absolute;
@@ -752,6 +748,7 @@ ul {
     text-align: center;
     overflow: hidden;
     transition: var(--transition-3);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .medical-departments .boxs .box p {
