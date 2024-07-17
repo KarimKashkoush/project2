@@ -704,6 +704,10 @@ ul {
     font-size: 30px;
 }
 
+.footer .section-header {
+    margin-bottom: 15px;
+}
+
 .copy-right {
     background-color: var(--main-color);
     padding: 15px;
