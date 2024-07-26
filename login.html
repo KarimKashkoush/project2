@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>البطاقة الصحية - تسجيل الدخول</title>
+        <!-- Font Awesome Style -->
+        <link rel="stylesheet" href="style/all.css">
+        <!-- Css -->
+        <link rel="stylesheet" href="style/main.css">
+        <!-- link animation -->
+    </head>
+</head>
+
+<body>
+    <section class="login-page">
+        <section class="container">
+            <form class="form-login">
+                <h2 class="form-header">تسجيل الدخول</h2>
+                <select name="job-user" id="job-user">
+                    <option value="">--اختر--</option>
+                    <option value="صاحب بطاقة صحية">صاحب بطاقة صحية</option>
+                    <option value="دكتور">دكتور</option>
+                    <option value="معمل تحاليل">معمل تحاليل</option>
+                    <option value="مركز آشعة">مركز آشعة</option>
+                    <option value="صيدلية">صيدلية</option>
+                </select>
+                <section class="email">
+                    <input type="email" name="email" id="email" placeholder="أدخل الإيميل">
+                    <span class="error-massege"></span>
+                </section>
+                <section class="password">
+                    <input type="password" name="password" id="password" placeholder="أدخل كلمة المرور">
+                    <span class="error-massege"></span>
+                </section>
+                <button class="form-btn">دخول <i class="fa-solid fa-arrow-left btn-animation"></i></button>
+                <span class="error-massege"></span>
+            </form>
+        </section>
+
+        <section class="copy-right">
+            <section class="conatainer">
+                <p>صمم بواسطة تيم, <span id="copyRightDate"></span></p>
+            </section>
+        </section>
+    </section>
+
+
+    <!-- CopyRight -->
+    <script>
+        const year = new Date().getFullYear();
+        document.getElementById("copyRightDate").innerHTML = year;
+    </script>
+    <!-- CopyRight -->
+    <!-- Font Awesome Script -->
+    <script src="js/all.js"></script>
+    <!-- Font Awesome Script -->
+    <!-- Js -->
+    <script src="js/script.js"></script>
+    <!-- Js -->
+</body>
+
+</html>

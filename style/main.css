@@ -25,10 +25,57 @@ body {
 }
 
 body,
-button {
+button,
+input,
+select {
     font-family: "Cairo", sans-serif;
 }
 
+input,
+button,
+select {
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid var(--main-color);
+    background-color: transparent;
+    padding: 7px 10px;
+}
+
+button {
+    cursor: pointer;
+}
+
+.form-header {
+    text-align: center;
+    color: var(--main-color);
+}
+
+.form-btn {
+    background-color: var(--main-color) ;
+    color: var(--w-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 16px;
+}
+
+.form-btn:hover .btn-animation {
+    animation: moveLeft 1s linear infinite;
+}
+
+@keyframes moveLeft {
+    0% {
+        transform: translateX(0px);
+    }
+    50% {
+        transform: translateX(-10px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
 /* Start Container Setting */
 .container {
     padding-inline: 15px;
@@ -769,6 +816,7 @@ ul {
     color: var(--w-color);
     font-size: 16px;
     text-align: center;
+    min-height: 59.6px;
 }
 
 @media (max-width: 786px) {
@@ -789,4 +837,57 @@ ul {
     }
 }
 
-/* Start Footer */
+/* End Footer */
+
+
+
+/* =============================== */
+/* Login Page */
+.login-page {
+    background-position: top center;
+    background-size: cover;
+}
+
+.login-page .container {
+    height: calc(100vh - 59.6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.form-login {
+    padding: 20px;
+    border-radius: 25px;
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--main-color);
+    width: 550px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.form-login input,
+.form-login select,
+::placeholder {
+    width: 100%;
+    font-size: 16px;
+}
+
+.form-login input,
+.form-login select {
+    width: 100%;
+    font-size: 16px;
+}
+
+.login-page .copy-right {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-bottom: 0;
+}
+
+/* End Page */
+/* =============================== */
