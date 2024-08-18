@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= title %>
+    </title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/all.css">
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+</head>
+
+<body>
+    <section class="header">
+        <section class="container">
+            <section class="logo">
+                <a href="/">
+                    البطاقة الصحية
+                </a>
+            </section>
+
+            <button onclick="openCloseNavbar()"><i class="fa-solid fa-bars" id="iconNav"></i></button>
+
+            <nav id="navbar">
+                <ul>
+                    <li>
+                        <a href="/home">الرئيسية</a>
+                    </li>
+                    <li>
+                        <a href="/doctor">الدكتور</a>
+                    </li>
+                    <li>
+                        <a href="/add">إضافة مستخدم</a>
+                    </li>
+                    <li>
+                        <a href="/dashboard">لوحة التحكم</a>
+                    </li>
+                    <li>
+                        <a href="/">تسجيل الدخول</a>
+                    </li>
+                    <li>
+                        <a href="/signup">إنشاء حساب</a>
+                    </li>
+                </ul>
+            </nav>
+        </section>
+    </section>
+
+    <section class="landing">
+        <section class="container">
+            <section class="content">
+                <h2>البطاقة الصحية</h2>
+                <p>البطاقة الصحية هي عبارة عن بطاقة ذكية تحتوي علي البينات الطبية أو مايسمي بالهوية الطبية للمستخدم حيث
+                    أنها
+                    تحتوي علي السجل المربضي الخاص به والأمراض المزمنة والتقارير الطبية والآشعة والتحاليل والادوية.</p>
+                <a href="/add">الاشتراك في الخدمة</a>
+            </section>
+            <lottie-player src="https://lottie.host/3bd665e0-6a3c-42a5-b83a-2a34725a4469/UM4njWYmAz.json"
+                background="transparent" speed="1" loop autoplay class="home-animation"></lottie-player>
+        </section>
+    </section>
+
+    <section class="about">
+        <section class="container">
+            <section class="about-header section-header">
+                <h2>
+                    ماهي البطاقة الصحية
+                </h2>
+            </section>
+            <section class="about-content">
+                <section class="boxs">
+                    <section class="box">
+                        <section class="image">
+                            <img src="images/id-card.png" alt="">
+                        </section>
+                        <section class="title">
+                            <p>البطاقة الصحية هي عبارة عن بطاقة ذكية تحتوي علي البينات الطبية أو مايسمي بالهوية الطبية
+                                للمستخدم حيث
+                                أنها
+                                تحتوي علي السجل المرضي الخاص به والأمراض المزمنة والتقارير الطبية والآشعة والتحاليل
+                                والادوية.</p>
+                        </section>
+                    </section>
+                    <section class="box">
+                        <section class="image">
+                            <img src="images/nfc.png" alt="">
+                        </section>
+                        <section class="title">
+                            <p>البطاقة تحتوي علي ميزة ال Nfc </p>
+                        </section>
+                    </section>
+                    <section class="box">
+                        <section class="image">
+                            <img src="images/diagnosis.png" alt="">
+                        </section>
+                        <section class="title">
+                            <p>تحتوي البطاقة علي جميع الآشعة والتحاليل الخاصة بصاحبها</p>
+                        </section>
+                    </section>
+                    <section class="box">
+                        <section class="image">
+                            <img src="images/find-user.png" alt="">
+                        </section>
+                        <section class="title">
+                            <p>البحث عن مستخدم بااستخدام الرقم القومي الخص به</p>
+                            <form class="search-user" action="/search" method="post" role="search">
+                                <input type="text" placeholder="الرقم القومي" name="searchValue">
+                                <button class="search-btn" type="submit">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </form>
+                        </section>
+                    </section>
+                </section>
+            </section>
+        </section>
+    </section>
+
+    <section class="whos-user">
+        <section class="container">
+            <section class="section-header">
+                <h2>المستخدمين</h2>
+            </section>
+
+            <section class="content">
+                <section class="box">
+                    <img src="images/whos-users.png" alt="users">
+                    <h2>المستخدمين</h2>
+                    <p>المستخمدين الذين يرغبون في حفظ الهوية الطبية الخاصة بهم والرجوع لها عند الحاجة</p>
+                </section>
+
+                <section class="box">
+                    <img src="images/whos-doctor.png" alt="doctor">
+                    <h2>دكتور</h2>
+                    <p>يقوم الدكتور بتسجيل التقرير الطبي والاشعة والتحاليل والأدوية للمريض لحفظها فيالسجل الطبي الخاص به
+                    </p>
+                </section>
+
+                <section class="box">
+                    <img src="images/whos-radiology.png" alt="radiology">
+                    <h2>قسم الآشعة</h2>
+                    <p>يقوم قسم الآشعة بقرآة الآشعة المسجلة من قبل الدكتور وتنفيذها ومن حفظها في السجل الطبي للمريض</p>
+                </section>
+
+                <section class="box">
+                    <img src="images/whos-chemical-analysis.png" alt="chemical-analysis">
+                    <h2>معمل التحاليل</h2>
+                    <p>يقوم معل التحاليل بقرآة التحاليل المسجلة من قبل الدكتور وتنفيذها ومن ثم تسجيل النتيجة في السجل
+                        الطبي للمريض</p>
+                </section>
+
+                <section class="box">
+                    <img src="images/whos-medicine.png" alt="medicine">
+                    <h2>الصيدلية</h2>
+                    <p>تقوم الصيدلية بصرف الأدوية المسجلة من قبل الدكتور في السجل الطبي الخاص بالمريض</p>
+                </section>
+            </section>
+        </section>
+    </section>
+    <script src="js/all.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

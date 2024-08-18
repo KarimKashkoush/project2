@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= object.fullName %>
+    </title>
+    <link rel="stylesheet" href="/style/style.css">
+</head>
+
+<body>
+
+    <section class="cards">
+        <section class="container">
+            <section class="card-title">
+                <h2> البطاقة الصحية الخاصة بـــ / <%= object.fullName %>
+                </h2>
+            </section>
+            <section class="card">
+                <section class="card-right">
+                    <section class="card-title">
+                        <h3>البطاقة الصحية الخاصة بــ</h3>
+                        <h4>
+                            <%= object.fullName %>
+                        </h4>
+                        <h4>الرقم القومي: <%= object.nationalityId %></h4>
+                        <h4>الأمراض المزمنة: <%= object.healthy %></h4>
+                        <h4>تاريخ الميلاد: <%= object.birthday %></h4>
+                        <h4>أرقام الطوارئ: 0<%= object.emergencyNumber1 %> - 0<%= object.emergencyNumber2 %></h4>
+                    </section>
+                </section>
+                <section class="card-left">
+                    <section class="image">
+                        <img src="/images/donkeys.jpg" alt="personal-Photo">
+                    </section>
+                    <section class="image">
+                        <img src="/images/qr-code.jpg" alt="personal-Photo">
+                    </section>
+                </section>
+            </section>
+        </section>
+    </section>
+
+
+</body>
+
+</html>
