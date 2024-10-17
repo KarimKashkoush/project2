@@ -17,7 +17,7 @@
         <section class="container">
             <section class="logo">
                 <a href="/">
-                    البطاقة الصحية
+                    الهوية الطبية
                 </a>
             </section>
 
@@ -25,24 +25,15 @@
 
             <nav id="navbar">
                 <ul>
-                    <li>
-                        <a href="/home">الرئيسية</a>
-                    </li>
-                    <li>
-                        <a href="/doctor">الدكتور</a>
-                    </li>
-                    <li>
-                        <a href="/add">إضافة مستخدم</a>
-                    </li>
-                    <li>
-                        <a href="/dashboard">لوحة التحكم</a>
-                    </li>
-                    <li>
-                        <a href="/">تسجيل الدخول</a>
-                    </li>
-                    <li>
-                        <a href="/signup">إنشاء حساب</a>
-                    </li>
+                    <% if (isLoggedIn) { %>
+                        <li>
+                            <%= personalName %>
+                        </li>
+                        <li><a href="/logout" class="logout">تسجيل الخروج</a></li>
+                        <% } else { %>
+                            <li><a href="/login">تسجيل الدخول</a></li>
+                            <li><a href="/signup">إنشاء حساب</a></li>
+                            <% } %>
                 </ul>
             </nav>
         </section>
@@ -51,11 +42,20 @@
     <section class="landing">
         <section class="container">
             <section class="content">
-                <h2>البطاقة الصحية</h2>
-                <p>البطاقة الصحية هي عبارة عن بطاقة ذكية تحتوي علي البينات الطبية أو مايسمي بالهوية الطبية للمستخدم حيث
+                <h2>الهوية الطبية</h2>
+                <p>الهوية الصحية هي عبارة عن بطاقة ذكية تحتوي علي البينات الطبية أو مايسمي بالهوية الطبية للمستخدم حيث
                     أنها
-                    تحتوي علي السجل المربضي الخاص به والأمراض المزمنة والتقارير الطبية والآشعة والتحاليل والادوية.</p>
+                    تحتوي علي السجل المرضي الخاص به والأمراض المزمنة والتقارير الطبية والآشعة والتحاليل والادوية.</p>
                 <a href="/add">الاشتراك في الخدمة</a>
+                <section class="title">
+                    <p>البحث عن مستخدم بااستخدام الرقم القومي الخص به</p>
+                    <form class="search-user" action="/searchResult" method="post" role="search">
+                        <input type="text" placeholder="الرقم القومي" name="searchValue">
+                        <button class="search-btn" type="submit">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </form>
+                </section>
             </section>
             <lottie-player src="https://lottie.host/3bd665e0-6a3c-42a5-b83a-2a34725a4469/UM4njWYmAz.json"
                 background="transparent" speed="1" loop autoplay class="home-animation"></lottie-player>
@@ -105,7 +105,7 @@
                         </section>
                         <section class="title">
                             <p>البحث عن مستخدم بااستخدام الرقم القومي الخص به</p>
-                            <form class="search-user" action="/search" method="post" role="search">
+                            <form class="search-user" action="/searchResult" method="post" role="search">
                                 <input type="text" placeholder="الرقم القومي" name="searchValue">
                                 <button class="search-btn" type="submit">
                                     <i class="fa fa-search"></i>

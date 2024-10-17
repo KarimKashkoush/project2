@@ -1,7 +1,10 @@
-const express = require('express')
+const express = require('express');
 const router = express.Router();
-const User = require('../models/User')
-const userController = require('../controllers/userController')
+const User = require('../models/User');
+const Register = require('../models/register');
+const userController = require('../controllers/userController');
+const { uploadImage } = require('../middleware/uploadImage');
+const { ensureDoctorRole, ensureLaboratoryRole, ensureRadiologyRole, ensurePharmacyRole, ensureUserRole } = require('../middleware/roleMiddleware');
 
 
 router.post('/reports/:id/report', async (req, res) => {
@@ -12,41 +15,79 @@ router.post('/reports/:id/report', async (req, res) => {
                 report: req.body.report,
                 rays: req.body.rays,
                 analysis: req.body.analysis,
-                Prescription: req.body.Prescription
+                Prescription: req.body.Prescription,
+                doctorName: req.body.doctorName
             });
             await patient.save();
         }
-        res.redirect('/doctor');
+        res.redirect('/');
     } catch (err) {
         console.log(err);
         res.status(500).send('An error occurred');
     }
 });
 
-// الصفحة الرئيسية
-router.get('/login', userController.login)
 
-// الصفحة الرئيسية
-router.get('/signup', userController.signup)
 
-// الصفحة الرئيسية
-router.get('/home', userController.home)
+
+
+// معالجة تسجيل الدخول
+router.post('/login', userController.handleLogin);
+
+// معالجة إنشاء الحساب
+router.post('/signup', userController.handleSignup);
+
+// تسجيل الخروج
+router.get('/logout', userController.handleLogout);
+
+// عرض صفحة تسجيل الدخول
+router.get('/login', userController.login);
+
+// عرض صفحة التسجيل
+router.get('/signup', userController.signup);
+
+
+// عرض الصفحة الرئيسية
+router.get('/', userController.home);
+
+// عرض صفحة الدكتور 
+router.get('/doctor', ensureDoctorRole, userController.doctor);
+
+// عرض صفحة المعمل
+router.get('/laboratory', ensureLaboratoryRole, userController.laboratory);
+
+// مسارات صفحة "radiology"
+router.get('/radiology', ensureRadiologyRole, userController.radiology);
+
+// مسارات صفحة "Pharmacy"
+router.get('/pharmacy', ensurePharmacyRole, userController.pharmacy);
+
+// مسارات صفحة "radiology"
+router.get('/radiology', ensureRadiologyRole, userController.radiology);
 
 // لوحة التحكم
-router.get('/dashboard', userController.dashboard)
-
-// اضافة الي قاعدة البيانات
-router.post('/add', userController.addMongo);
-
-// الانتقال الي الصفحات
-router.get("/add", userController.add)
+router.get('/dashboard', userController.dashboard);
 
 
-router.post("/search", userController.search)
+// إضافة مستخدم إلى قاعدة البيانات
+router.post('/add', uploadImage, userController.addMongo);
 
-// الانتقال الي بيانات الشخص
-router.get("/user/:id", userController.view)
+// عرض صفحة إضافة مستخدم
+router.get('/add', userController.add);
 
-router.delete('/:id', userController.deleteUser)
 
-module.exports = router
+
+// عرض صفحة إضافة مستخدم
+router.get('/add', userController.add);
+
+// البحث وعرض نتائج البحث
+router.post('/searchResult', userController.searchResult);
+router.get('/searchResult', userController.searchResult);
+
+// عرض بيانات المستخدم بناءً على ID
+router.get('/user/:id', userController.view);
+
+// حذف مستخدم من قاعدة البيانات
+router.delete('/:id', userController.deleteUser);
+
+module.exports = router;

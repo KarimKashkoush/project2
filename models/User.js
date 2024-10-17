@@ -6,7 +6,9 @@ const reportsSchema = new Schema({
     report: String,
     rays: String,
     analysis: String,
-    Prescription: String
+    analysisImage: String,
+    Prescription: String,
+    doctorName: String
 },
     { timestamps: true }, { _id: false });
 
@@ -16,6 +18,7 @@ const articleSchema = new Schema({
     nationalityId: Number,
     birthday: String,
     tele: Number,
+    image: String,
     emergencyNumber1: Number,
     emergencyNumber2: Number,
     Country: String,

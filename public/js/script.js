@@ -1,9 +1,9 @@
 function healthyChange() {
     let healthySelect = document.getElementById("healthy");
     let healthyInput = document.getElementById("healthyInput")
-    if (healthySelect.value == "لا" || healthySelect.value == "") {
+    if (healthySelect.value == "لا يوجد" || healthySelect.value == "") {
         healthyInput.style.display = "none";
-        healthyInput.value = "لا";
+        healthyInput.value = "لا يوجد";
     } else {
         healthyInput.value = "";
         healthyInput.style.display = "block";

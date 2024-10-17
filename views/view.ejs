@@ -11,38 +11,114 @@
 </head>
 
 <body>
-
-    <section class="cards">
-        <section class="container">
-            <section class="card-title">
-                <h2> البطاقة الصحية الخاصة بـــ / <%= object.fullName %>
-                </h2>
-            </section>
-            <section class="card">
-                <section class="card-right">
-                    <section class="card-title">
-                        <h3>البطاقة الصحية الخاصة بــ</h3>
-                        <h4>
-                            <%= object.fullName %>
-                        </h4>
-                        <h4>الرقم القومي: <%= object.nationalityId %></h4>
-                        <h4>الأمراض المزمنة: <%= object.healthy %></h4>
-                        <h4>تاريخ الميلاد: <%= object.birthday %></h4>
-                        <h4>أرقام الطوارئ: 0<%= object.emergencyNumber1 %> - 0<%= object.emergencyNumber2 %></h4>
-                    </section>
-                </section>
-                <section class="card-left">
-                    <section class="image">
-                        <img src="/images/donkeys.jpg" alt="personal-Photo">
-                    </section>
-                    <section class="image">
-                        <img src="/images/qr-code.jpg" alt="personal-Photo">
-                    </section>
-                </section>
+    <section class="header">
+        <section class="container" style="display: block; text-align: center;">
+            <section class="logo">
+                <a href="/">
+                    الهوية الطبية
+                </a>
             </section>
         </section>
     </section>
+    
 
+    <section class="cards">
+        <section class="container">
+            <section class="front-card">
+                <img src="/images/WhatsApp Image 2024-10-06 at 17.27.44_84a62423.jpg" alt="">
+                <section class="data">
+                    <section class="right">
+                        <p>
+                            <%= object.fullName %> 
+                        </p>
+                        <p>
+                            الأمراض المزمنة:
+                            <br> <%= object.healthy %>
+                        </p>
+                        <p>
+                            أرقام الطوارئ:
+                            <br> 0<%= object.emergencyNumber1 %>
+                                <% if (object.emergencyNumber2 !==null) { %>
+                                    - 0<%= object.emergencyNumber2 %>
+                                        <% } %>
+                        </p>
+                        <p>
+                            الرقم القومي:
+                             <%= object.nationalityId %>
+                        </p>
+
+
+                    </section>
+                    <section class="left">
+                        <img src="<%= object.image %>" alt="personal-Photo">
+                        <img src="/images/nfc-logo.png" alt="" class="nfc">
+                        <img src="<%= qrCodeUrl %>" alt="QR Code">
+                    </section>
+                </section>
+            </section>
+            <section class="back-card">
+                <img src="/images/card-back.jpg" alt="">
+            </section>
+        </section>
+
+    </section>
+
+    <section class="report-view">
+
+        <section class="container">
+            <section class="section-header">
+                <h2>التقارير الطبية</h2>
+            </section>
+
+
+            <% object.reports.slice().reverse().forEach((element, index)=> { %>
+                <section class="reports-view">
+                    <% if (role !=='users' ) { %>
+                        <section class="report-top">
+                            <% if (role=='Laboratory' ) { %>
+                                <button>اضافة نتائج التحاليل</button>
+                                <% } %>
+                                    <% if (role=='radiology' ) { %>
+                                        <button>اضافة نتائج الاشعة</button>
+                                        <% } %>
+                                            <% if (role=='Pharmacy' ) { %>
+                                                <button>صرف الادوية</button>
+                                                <% } %>
+                        </section>
+
+                        <% } %>
+                            <section class="report">
+                                <h3>التقرير الطبي:</h3>
+                                <p>
+                                    <%= element.report %>
+                                </p>
+                            </section>
+                            <section class="rays">
+                                <h3>الآشعة:</h3>
+                                <%= element.rays %>
+                            </section>
+                            <section class="analysis">
+                                <h3>التحاليل الطبية:</h3>
+                                <%= element.analysis %>
+                            </section>
+                            <section class="prescription">
+                                <h3>الأدوية:</h3>
+                                <%= element.Prescription %>
+                            </section>
+                            <section class="report-bottom">
+                                <h3>رقم التقرير: <%= object.reports.length - index %>
+                                </h3>
+                                <h3>د/ <%= element.doctorName %>
+                                </h3>
+                                <h3>تاريخ التقرير: <%= moment(element.createdAt).format('MMMM Do YYYY, h:mm:ss a') %>
+                                </h3>
+                            </section>
+
+                </section>
+                <% }) %>
+
+        </section>
+    </section>
 
 </body>
 

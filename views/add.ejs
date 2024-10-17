@@ -10,7 +10,15 @@
 </head>
 
 <body>
-
+    <section class="header">
+        <section class="container" style="display: block; text-align: center;">
+            <section class="logo">
+                <a href="/">
+                    الهوية الطبية
+                </a>
+            </section>
+        </section>
+    </section>
 
     <!-- main -->
     <main>
@@ -25,7 +33,7 @@
                     </h2>
                 </section>
 
-                <form action="/add" method="post" id="addForm">
+                <form action="/add" method="post" id="addForm" enctype="multipart/form-data">
                     <section class="input-section">
                         <label for="inputName" class="form-label">الاسم</label>
                         <input placeholder="الاسم" type="text" class="form-control" id="inputName" name="fullName" />
@@ -98,7 +106,7 @@
                         <label for="healthy" class="form-label">هل يوجد أمراض مزمنة ؟</label>
                         <select id="healthy" class="form-control" onchange="healthyChange()">
                             <option value="" selected>اختر...</option>
-                            <option value="لا">لا</option>
+                            <option value="لا يوجد">لا يوجد</option>
                             <option value="نعم">نعم</option>
                         </select>
                         <br>
