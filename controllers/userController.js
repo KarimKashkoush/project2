@@ -2,7 +2,6 @@ const Register = require('../models/register');
 const User = require('../models/User');
 const moment = require('moment');
 const qrcode = require('qrcode');
-const bcrypt = require('bcryptjs');
 
 
 
@@ -150,7 +149,7 @@ const handleLogin = async (req, res) => {
     try {
         const user = await Register.findOne({ email });
 
-        if (user && await bcrypt.compare(password, user.password)) {
+        if (user && password === user.password) {
             if (!req.session) {
                 return res.status(500).send('Session is not initialized.');
             }
@@ -206,9 +205,8 @@ const handleSignup = async (req, res) => {
             `);
         } else {
             // تشفير كلمة المرور قبل حفظها
-            const hashedPassword = await bcrypt.hash(password, 10);
 
-            const newUser = new Register({ personalName, role, email, password: hashedPassword });
+            const newUser = new Register({ personalName, role, email, password });
             await newUser.save();
             res.redirect('/');
         }
