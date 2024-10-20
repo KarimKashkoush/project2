@@ -15,7 +15,7 @@ app.use(session({
     resave: false,
     saveUninitialized: false,
     store: MongoStore.create({
-        mongoUrl: 'mongodb://localhost:27017/project2',
+        mongoUrl: 'mongodb+srv://karimkashkoush5:HwYhzwUk9eXJsQ9s@cluster0.an64b.mongodb.net/',
         collectionName: 'sessions',
     }),
     cookie: {
@@ -34,7 +34,7 @@ app.use(allRoutes);
 
 
 
-mongoose.connect("mongodb://localhost:27017/project2")
+mongoose.connect("mongodb+srv://karimkashkoush5:HwYhzwUk9eXJsQ9s@cluster0.an64b.mongodb.net/")
     .then(() => {
         app.listen(port, () => {
             console.log(`Server running at http://localhost:${port}`);
