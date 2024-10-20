@@ -2,7 +2,7 @@ const Register = require('../models/register');
 const User = require('../models/User');
 const moment = require('moment');
 const qrcode = require('qrcode');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 
 
 

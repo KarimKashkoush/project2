@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start":  "node app.js",
+    "start": "node app.js",
     "watch": "nodemon --ext *"
   },
   "keywords": [],
@@ -12,7 +12,7 @@
   "description": "",
   "dependencies": {
     "aws-sdk": "^2.1670.0",
-    "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3",
     "bwip-js": "^4.5.1",
     "connect-mongo": "^5.1.0",
     "ejs": "^3.1.10",
