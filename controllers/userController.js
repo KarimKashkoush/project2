@@ -90,7 +90,7 @@ const addMongo = (req, res) => {
                 let dataInBody = req.body;
 
                 // إنشاء الرابط الكامل للصورة
-                const imageLink = `${req.protocol}://${req.get('host')}/${req.file ? req.file.filename : 'default.png'}`;
+                const imageLink = `${req.file ? req.file.filename : 'default.jpg'}`;
 
                 // تعيين الرابط الكامل للصورة في البيانات
                 dataInBody.image = imageLink;
