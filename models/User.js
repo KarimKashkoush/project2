@@ -24,6 +24,7 @@ const articleSchema = new Schema({
     Country: String,
     email: String,
     job: String,
+    blood: String,
     healthy: String,
     reports: [reportsSchema],
 },

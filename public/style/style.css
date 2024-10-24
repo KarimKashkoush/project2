@@ -316,6 +316,17 @@ button {
     color: #fff;
     font-weight: 700;
     line-height: 1.6;
+
+    p {
+        color: #fff;
+        font-weight: 900;
+
+        span {
+            color: #bcb6b6;
+            font-weight: 600;
+        }
+    }
+
 }
 
 .cards .container .data .left {

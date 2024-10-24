@@ -26,7 +26,7 @@ const home = (req, res) => {
     const personalName = req.session.personalName; // الحصول على اسم المستخدم من الجلسة
     const role = req.session.role || '';
 
-    res.render('home', {role, title: "الهوية الطبية", isLoggedIn, personalName });
+    res.render('home', { role, title: "الهوية الطبية", isLoggedIn, personalName });
 };
 
 // صفحة الدكتور
@@ -58,7 +58,7 @@ const searchResult = (req, res) => {
             const role = req.session.role || '';
             const personalName = req.session.personalName; // الحصول على اسم المستخدم من الجلسة
 
-            res.render('searchResult', {personalName, isLoggedIn, role, result: data, title: "البطاقة الصحية - الطبيب", moment: moment });
+            res.render('searchResult', { personalName, isLoggedIn, role, result: data, title: "البطاقة الصحية - الطبيب", moment: moment });
         })
         .catch((err) => { console.log(err); });
 };
@@ -98,7 +98,14 @@ const addMongo = (req, res) => {
                 const data = new User(dataInBody);
                 return data.save()
                     .then(() => {
-                        res.redirect('/add');
+                        res.send(`
+                            <script>
+                                alert('تم التسجيل بنجاح!');
+                                setTimeout(function() {
+                                    window.location.href = '/add'; // إعادة توجيه إلى الصفحة بعد التنبيه
+                                }, 1000); // تأخير لمدة ثانية واحدة قبل إعادة التوجيه
+                            </script>
+                        `);
                     })
                     .catch(err => {
                         console.log(err);
@@ -111,6 +118,8 @@ const addMongo = (req, res) => {
             res.status(500).send('حدث خطأ ما.');
         });
 };
+
+
 
 // عرض بيانات الشخص الواحد فقط
 const view = (req, res) => {

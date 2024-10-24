@@ -20,7 +20,7 @@
             </section>
         </section>
     </section>
-    
+
 
     <section class="cards">
         <section class="container">
@@ -29,23 +29,40 @@
                 <section class="data">
                     <section class="right">
                         <p>
-                            <%= object.fullName %> 
+                            <%= object.fullName %>
                         </p>
                         <p>
                             الأمراض المزمنة:
-                            <br> <%= object.healthy %>
+                            <br>
+                            <span>
+                                <%= object.healthy %>
+                            </span>
                         </p>
-                        <p>
-                            أرقام الطوارئ:
-                            <br> 0<%= object.emergencyNumber1 %>
-                                <% if (object.emergencyNumber2 !==null) { %>
-                                    - 0<%= object.emergencyNumber2 %>
-                                        <% } %>
-                        </p>
-                        <p>
-                            الرقم القومي:
-                             <%= object.nationalityId %>
-                        </p>
+
+                        <% if (object.blood) { %>
+                            <p>
+                                فصيلة الدم:
+                                <span>
+                                    <%= object.blood %>
+                                </span>
+                            </p>
+                            <% } %>
+
+                                <p>
+                                    أرقام الطوارئ:
+                                    <br>
+                                    <span>0<%= object.emergencyNumber1 %>
+                                            <% if (object.emergencyNumber2 !==null) { %>
+                                                - 0<%= object.emergencyNumber2 %>
+                                                    <% } %></span>
+                                </p>
+
+                                <p>
+                                    الرقم القومي:
+                                    <span>
+                                        <%= object.nationalityId %>
+                                    </span>
+                                </p>
 
 
                     </section>

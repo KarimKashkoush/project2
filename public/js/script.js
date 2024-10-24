@@ -10,6 +10,7 @@ function healthyChange() {
     }
 }
 
+
 function birthdayFun() {
     let day = document.getElementById("day")
     let month = document.getElementById("month")
